@@ -23,4 +23,4 @@ if __name__ == '__main__':
                       w_input_hidden=w_input_hidden, w_hidden_output=w_hidden_output)
 
     print(n.w_input_hidden, n.w_hidden_output)
-    print(n.query([1.0, 0.5, -1.5]))
+    print(n.train([1.0, 0.5, -1.5], [1, 1, 1]))
