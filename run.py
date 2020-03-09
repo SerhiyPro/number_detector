@@ -17,7 +17,7 @@ if __name__ == '__main__':
                       w_input_hidden=w_input_hidden, w_hidden_output=w_hidden_output)
 
     # training the neural network
-    with open('datasets/mnist_train_100.csv') as training_data_file:
+    with open('datasets/mnist_train.csv') as training_data_file:
         for record in training_data_file:
             separated_record_values = record.split(',')
             # scale the input data to the range 0.01 0.99
@@ -29,7 +29,7 @@ if __name__ == '__main__':
 
     efficiency_scores = []
     # testing the efficiency of the nural network
-    with open('datasets/mnist_test_10.csv') as test_data_file:
+    with open('datasets/mnist_test.csv') as test_data_file:
         for record in test_data_file:
             separated_record_values = record.split(',')
             correct_answer = int(separated_record_values[0])
