@@ -28,3 +28,7 @@ For unix-like operating systems:
 python3 run.py
 ```
 
+In case you want to see how the image looks like run:
+```
+python (or python3) app/image_depictor.py
+```
