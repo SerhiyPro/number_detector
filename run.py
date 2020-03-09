@@ -1,6 +1,6 @@
 import numpy
 from app.neural_network import NeuralNetwork
-
+from app.utils import get_normally_distributed_matrix
 
 if __name__ == '__main__':
     input_nodes_number = 784  # number of pixels in 28x28 picture
@@ -8,15 +8,9 @@ if __name__ == '__main__':
     output_nodes_number = 10
 
     learning_factor = 0.3
-    # generating (hidden_nodes_number x input_nodes_number) matrix of
-    # normally distributed random values (from -0.5 to 0.5)
-    normal_distribution_center = 0.0
-    w_input_hidden = numpy.random.normal(normal_distribution_center, pow(hidden_nodes_number, -0.5),
-                                         (hidden_nodes_number, input_nodes_number))
-    # generating (output_nodes_number x hidden_nodes_number) matrix of
-    # normally distributed random values (from -0.5 to 0.5)
-    w_hidden_output = numpy.random.normal(normal_distribution_center, pow(output_nodes_number, -0.5),
-                                          (output_nodes_number, hidden_nodes_number))
+
+    w_input_hidden = get_normally_distributed_matrix(hidden_nodes_number, input_nodes_number)
+    w_hidden_output = get_normally_distributed_matrix(output_nodes_number, hidden_nodes_number)
 
     n = NeuralNetwork(input_nodes_number=input_nodes_number, hidden_nodes_number=hidden_nodes_number,
                       output_nodes_number=output_nodes_number, learning_factor=learning_factor,

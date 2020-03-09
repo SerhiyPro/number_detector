@@ -32,8 +32,7 @@ class NeuralNetwork:
         self.w_input_hidden += self.learning_factor * numpy.dot((hidden_errors * hidden_outputs * (1.0-hidden_outputs)),
                                                                 numpy.transpose(inputs))
 
-    def query(self, input_layer: list):
-        # TODO: move to another method, input_layer -> 2-d matrix
+    def query(self, input_layer: list) -> numpy.ndarray:
         hidden_inputs = numpy.dot(self.w_input_hidden, input_layer)  # X_hidden = W_inputHidden * I
         hidden_outputs = self.activation_function(hidden_inputs)  # O_hidden = sigmoid(X_hidden)
 
@@ -41,7 +40,7 @@ class NeuralNetwork:
         return self.activation_function(final_inputs)  # O_final = sigmoid(X_final)
 
     @staticmethod
-    def activation_function(x) -> float:
+    def activation_function(x) -> numpy.ndarray:
         """
         Sigmoid function (1/1+e^(-x))
         """
