@@ -33,17 +33,17 @@ if __name__ == '__main__':
         for record in test_data_file:
             separated_record_values = record.split(',')
             correct_answer = int(separated_record_values[0])
-            print(f'Corrected answer is {correct_answer}')
+            print(f'Correct answer is {correct_answer}')
 
             inputs = (numpy.asfarray(separated_record_values[1:]) / 255.0 * 0.99) + 0.01
             outputs = n.query(inputs)
 
             predicted_value = numpy.argmax(outputs)  # getting the index of the biggest element
-            print(f'Predicted value is {predicted_value}')
+            print(f'Predicted value is {predicted_value}\n')
             if correct_answer == predicted_value:
                 efficiency_scores.append(1)
             else:
                 efficiency_scores.append(0)
 
     efficiency_score = sum(efficiency_scores) / len(efficiency_scores)
-    print(f'{efficiency_score:.2f}')
+    print(f'Efficiency - {efficiency_score:.2f}')
