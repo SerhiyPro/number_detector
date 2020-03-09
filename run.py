@@ -28,7 +28,7 @@ if __name__ == '__main__':
             n.train(inputs, targets)
 
     efficiency_scores = []
-    # testing the efficiency of the nural network
+    # testing the efficiency of the neural network
     with open('datasets/mnist_test.csv') as test_data_file:
         for record in test_data_file:
             separated_record_values = record.split(',')
