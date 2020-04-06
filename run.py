@@ -47,3 +47,4 @@ if __name__ == '__main__':
 
     efficiency_score = sum(efficiency_scores) / len(efficiency_scores)
     print(f'Efficiency - {efficiency_score:.2f}')
+    print(f'Number of correct predictions - {sum(efficiency_scores)}')
